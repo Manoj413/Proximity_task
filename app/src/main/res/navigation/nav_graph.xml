@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/aqiListFragment">
+
+    <fragment
+        android:id="@+id/aqiListFragment"
+        android:name="com.proximity.myapplication.home.view.AqiListFragment"
+        android:label="fragment_city_aqi_list"
+        tools:layout="@layout/fragment_city_aqi_list" >
+        <action
+            android:id="@+id/action_aqiListFragment_to_cityWiseAqiFragment"
+            app:destination="@id/cityWiseAqiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityWiseAqiFragment"
+        android:name="com.proximity.myapplication.detail.view.CityWiseAqiFragment"
+        android:label="fragment_city_wise_aqi"
+        tools:layout="@layout/fragment_city_wise_aqi" >
+        <argument
+            android:name="selectedCity"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
+</navigation>
